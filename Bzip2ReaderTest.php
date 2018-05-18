@@ -33,7 +33,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows_numbering;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows_numbering;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 62];
@@ -77,7 +77,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_10rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_10rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか
             list($file_row_count, $return_row_count, $loop_count) = [10, 0, 0];
@@ -109,7 +109,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか
             list($file_row_count, $return_row_count, $loop_count) = [300, 0, 0];
@@ -142,7 +142,7 @@ class Bzip2ReaderTest extends TestCase
         // 正確には空の一行のみがあるファイル
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_0rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_0rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか
             list($file_row_count, $return_row_count, $loop_count) = [1, 0, 0];
@@ -174,7 +174,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_1rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_1rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか
             list($file_row_count, $return_row_count, $loop_count) = [1, 0, 0];
@@ -206,7 +206,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_296rows_contain_empty_rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_296rows_contain_empty_rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか
             list($file_row_count, $return_row_count, $loop_count) = [296, 0, 0];
@@ -235,7 +235,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_10rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_10rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [10, 0, 0, 0];
@@ -253,7 +253,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 0];
@@ -282,10 +282,10 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_10rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_10rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
-            list($file_row_count, $return_row_count, $loop_count, $start_row) = [10, 0, 0, 0];
+            list($file_row_count, $return_row_count, $loop_count, $start_row) = [10, 0, 0, 1];
 
             $reader = new Bzip2Reader($file_path, $this->bzip2_replace_target, $this->bzip2_delimiter, $start_row);
             while ($result = $reader->getNextRows()) {
@@ -300,10 +300,10 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
-            list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 0];
+            list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 1];
 
             $reader = new Bzip2Reader($file_path, $this->bzip2_replace_target, $this->bzip2_delimiter, $start_row);
             while ($result = $reader->getNextRows()) {
@@ -329,7 +329,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_10rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_10rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [10, 0, 0, 5];
@@ -349,7 +349,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 5];
@@ -380,7 +380,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_10rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_10rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [10, 0, 0, 10];
@@ -400,7 +400,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 300];
@@ -431,7 +431,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_10rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_10rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [10, 0, 0, 15];
@@ -451,7 +451,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 305];
@@ -484,7 +484,7 @@ class Bzip2ReaderTest extends TestCase
         // 1回の読み込みで開始行数に達する（ちょうど）
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 62];
@@ -505,7 +505,7 @@ class Bzip2ReaderTest extends TestCase
         // 1回の読み込みで開始行数に達する（1行多く）
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 61];
@@ -526,7 +526,7 @@ class Bzip2ReaderTest extends TestCase
         // 1回の読み込みで開始行数に達する（2行以上多く）
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 50];
@@ -547,7 +547,7 @@ class Bzip2ReaderTest extends TestCase
         // 1回の読み込みで開始行数に達する（ちょうど）
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 124];
@@ -568,7 +568,7 @@ class Bzip2ReaderTest extends TestCase
         // 一回の読み込みで開始行数に達する（1行多く）
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 123];
@@ -589,7 +589,7 @@ class Bzip2ReaderTest extends TestCase
         // 一回の読み込みで開始行数に達する（2行以上多く）
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_" . $this->bz2file_300rows;
+            $file_path = "./test_sample/sample.log" . "_" . $this->bz2file_300rows;
 
             // ファイルの行数、返ってきた行数の総和、getNexRows()から何回データが返ってきたか、開始行
             list($file_row_count, $return_row_count, $loop_count, $start_row) = [300, 0, 0, 120];
@@ -620,7 +620,7 @@ class Bzip2ReaderTest extends TestCase
 
         \Closure::bind(function () {
 
-            $file_path = env('TEST_FILE_PATH') . "_not_exist_file_name.bz2";
+            $file_path = "./test_sample/sample.log" . "_not_exist_file_name.bz2";
 
             try {
                 $reader = new Bzip2Reader($file_path, $this->bzip2_replace_target, $this->bzip2_delimiter);
